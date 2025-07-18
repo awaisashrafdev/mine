@@ -118,49 +118,49 @@ export default function Portfolio() {
   const skills = [
     {
       name: "React/Next.js",
-      level: 95,
+      level: 80, // Tumhara main stack
       icon: <Code className="w-8 h-8" />,
       color: "from-blue-500 to-cyan-500",
     },
     {
       name: "JavaScript/TypeScript",
-      level: 90,
+      level: 75, // Strong base
       icon: <Cpu className="w-8 h-8" />,
       color: "from-yellow-500 to-orange-500",
     },
     {
       name: "UI/UX Design",
-      level: 85,
+      level: 60, // Decent design sense
       icon: <Palette className="w-8 h-8" />,
       color: "from-pink-500 to-rose-500",
     },
     {
       name: "Mobile Development",
-      level: 80,
+      level: 35, // Thoda kaam kia hoga React Native waghera
       icon: <Smartphone className="w-8 h-8" />,
       color: "from-green-500 to-emerald-500",
     },
     {
       name: "Full Stack",
-      level: 88,
+      level: 70, // Frontend strong, backend thoda kam
       icon: <Globe className="w-8 h-8" />,
       color: "from-purple-500 to-violet-500",
     },
     {
       name: "Database Design",
-      level: 85,
+      level: 55, // Normal MongoDB / Firebase level
       icon: <Database className="w-8 h-8" />,
       color: "from-red-500 to-pink-500",
     },
     {
       name: "Server Architecture",
-      level: 82,
+      level: 40, // Kam experience hoga ismein
       icon: <Server className="w-8 h-8" />,
       color: "from-indigo-500 to-blue-500",
     },
     {
       name: "DevOps",
-      level: 78,
+      level: 25, // Thoda bohat deploy kiya hoga (Vercel, Netlify etc)
       icon: <Layers className="w-8 h-8" />,
       color: "from-teal-500 to-cyan-500",
     },
@@ -168,119 +168,67 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "AI-Powered E-Commerce Platform",
+      title: "Free Instagram Followers Tool",
       description:
-        "Revolutionary e-commerce solution with AI recommendations, real-time analytics, and advanced payment processing. Built for scale with microservices architecture.",
-      tech: ["Next.js", "TypeScript", "AI/ML", "Stripe", "Redis", "PostgreSQL"],
-      image: "/placeholder.svg?height=400&width=600",
-      github: "#",
-      live: "#",
+        "A sleek and animated web app that mimics an Instagram followers generator UI. Built with modern UI/UX design for demo and fun purposes.",
+      tech: ["Next.js", "Tailwind CSS", "React Hook Form", "Framer Motion"],
+      image: "/projects/free-followers.png",
+      github: "https://github.com/awaisashrafdev/follwer-free",
+      live: "https://quranwebsite-seven.vercel.app/",
       featured: true,
     },
     {
-      title: "Real-Time Collaboration Suite",
+      title: "Ali Hassan - Hafiz Quran Portfolio",
       description:
-        "Enterprise-grade collaboration platform with video conferencing, document sharing, and project management. Supports 10,000+ concurrent users.",
-      tech: ["React", "Node.js", "Socket.io", "WebRTC", "MongoDB", "AWS"],
-      image: "/placeholder.svg?height=400&width=600",
-      github: "#",
+        "A personal portfolio website for a Hafiz-e-Quran, showcasing his credentials, availability for teaching, and testimonials. Fully responsive and SEO-friendly.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      image: "/projects/ali-hassan-hafiz.png",
+      github: "https://github.com/awaisashrafdev/Quran-",
       live: "#",
       featured: true,
-    },
-    {
-      title: "Blockchain Trading Platform",
-      description:
-        "Secure cryptocurrency trading platform with advanced charting, portfolio management, and automated trading bots.",
-      tech: ["Next.js", "Web3", "Solidity", "Chart.js", "WebSocket", "Docker"],
-      image: "/placeholder.svg?height=400&width=600",
-      github: "#",
-      live: "#",
-      featured: true,
-    },
-    {
-      title: "Neural Network Visualizer",
-      description:
-        "Interactive tool for visualizing and training neural networks with real-time performance metrics.",
-      tech: ["React", "TensorFlow.js", "D3.js", "Python", "FastAPI"],
-      image: "/placeholder.svg?height=400&width=600",
-      github: "#",
-      live: "#",
-      featured: false,
-    },
-    {
-      title: "IoT Dashboard System",
-      description:
-        "Comprehensive IoT monitoring system with real-time data visualization and predictive analytics.",
-      tech: ["Vue.js", "Node.js", "InfluxDB", "Grafana", "MQTT"],
-      image: "/placeholder.svg?height=400&width=600",
-      github: "#",
-      live: "#",
-      featured: false,
-    },
-    {
-      title: "AR Shopping Experience",
-      description:
-        "Augmented reality shopping app that lets users try products virtually before purchasing.",
-      tech: ["React Native", "ARKit", "Three.js", "Firebase", "Stripe"],
-      image: "/placeholder.svg?height=400&width=600",
-      github: "#",
-      live: "#",
-      featured: false,
     },
   ];
 
   const experiences = [
     {
-      title: "Senior Full Stack Architect",
-      company: "Tech Innovations Corp",
-      period: "2022 - Present",
+      title: "Frontend Web Developer",
+      company: "Freelance & Personal Projects",
+      period: "2025 - Present",
       description:
-        "Leading a team of 15+ developers in building enterprise-scale applications. Architected microservices handling 1M+ daily active users. Implemented CI/CD pipelines reducing deployment time by 80%.",
+        "Working on modern and responsive websites using Next.js, Tailwind CSS, and TypeScript. Focused on UI/UX design, animation effects, and performance optimization.",
       achievements: [
-        "Increased system performance by 300%",
-        "Led migration to cloud infrastructure",
-        "Mentored 20+ junior developers",
+        "Built 10+ stylish and animated frontend projects",
+        "Designed and deployed my personal portfolio website",
+        "Integrated contact forms, animations, and third-party APIs",
       ],
     },
     {
-      title: "Lead Frontend Developer",
-      company: "Digital Solutions Agency",
-      period: "2020 - 2022",
+      title: "Web Development Intern",
+      company: "Remote (Self-Guided)",
+      period: "2024 - 2025",
       description:
-        "Spearheaded frontend development for Fortune 500 clients. Created reusable component libraries used across 50+ projects. Optimized applications achieving 98+ Lighthouse scores.",
+        "Completed hands-on projects, cloned websites, and practiced full-stack concepts with MongoDB, Express.js, and Next.js.",
       achievements: [
-        "Built design system used by 100+ developers",
-        "Reduced bundle size by 60%",
-        "Implemented PWA features",
-      ],
-    },
-    {
-      title: "Full Stack Developer",
-      company: "StartUp Accelerator",
-      period: "2019 - 2020",
-      description:
-        "Developed MVP products for 10+ startups. Built scalable backends handling millions of requests. Created responsive frontends with modern frameworks.",
-      achievements: [
-        "Launched 8 successful products",
-        "Achieved 99.9% uptime",
-        "Implemented real-time features",
+        "Cloned real-world apps like YouTube and Instagram",
+        "Practiced authentication systems with JWT & cookies",
+        "Explored deployment using Vercel and Netlify",
       ],
     },
   ];
 
   const stats = [
     {
-      number: "100+",
+      number: "10+",
       label: "Projects Completed",
       icon: <Target className="w-8 h-8" />,
     },
     {
-      number: "50+",
+      number: "8+",
       label: "Happy Clients",
       icon: <Users className="w-8 h-8" />,
     },
     {
-      number: "5+",
+      number: "1+",
       label: "Years Experience",
       icon: <Award className="w-8 h-8" />,
     },
@@ -363,9 +311,9 @@ export default function Portfolio() {
               <div className="absolute inset-8 bg-gradient-to-r from-pink-500 via-blue-500 to-purple-500 rounded-full blur-lg opacity-30 animate-spin-slow"></div>
 
               {/* Main Avatar */}
-              <div className="relative w-full h-full rounded-full border-4 border-gradient-to-r from-purple-500 to-pink-500 overflow-hidden bg-gray-900 shadow-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:shadow-purple-500/50">
+              <div className="relative w-full h-full rounded-full border-4 border-gradient-to-r from-purple-500 to-pink-500 overflow-hidden bg-gray-900 shadow-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:shadow-purple-500/50 mt-8">
                 <div className="w-full h-full bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 flex items-center justify-center text-8xl font-bold text-white relative overflow-hidden">
-                  <span className="relative z-10 drop-shadow-2xl">AR</span>
+                  <img src="/awais.jpg" alt="" />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transform -skew-x-12 animate-shimmer"></div>
                 </div>
               </div>
@@ -395,7 +343,7 @@ export default function Portfolio() {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <GlitchText
-              text="I'm Awais Rajput"
+              text="I'm Awais Ashraf"
               className="text-6xl md:text-9xl font-black mb-8 text-white drop-shadow-2xl"
             />
           </motion.div>
@@ -436,21 +384,28 @@ export default function Portfolio() {
             className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
           >
             <button className="group relative px-12 py-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white font-bold text-xl rounded-2xl overflow-hidden transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 transform-gpu">
-              <span className="relative z-10 flex items-center justify-center">
-                <Zap className="mr-3 group-hover:animate-bounce" size={24} />
-                HIRE THE SIGMA
-              </span>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=awaisashraf.dev@gmail.com&su=Hire%20Request&body=Hi%20Awais%2C%20I%20want%20to%20hire%20you...">
+                {" "}
+                <span className="relative z-10 flex items-center justify-center">
+                  <Zap className="mr-3 group-hover:animate-bounce" size={24} />
+                  HIRE ME
+                </span>
+              </a>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 transform -skew-x-12 group-hover:animate-shimmer"></div>
             </button>
 
-            <button className="group px-12 py-6 border-4 border-purple-500 text-purple-400 font-bold text-xl rounded-2xl transition-all duration-500 hover:bg-purple-500 hover:text-white hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 backdrop-blur-sm">
+            <a
+              href="/CV.pdf"
+              download
+              className="group inline-block px-12 py-6 border-4 border-purple-500 text-purple-400 font-bold text-xl rounded-2xl transition-all duration-500 hover:bg-purple-500 hover:text-white hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 backdrop-blur-sm"
+            >
               <Download
                 className="inline mr-3 group-hover:animate-bounce"
                 size={24}
               />
               DOWNLOAD CV
-            </button>
+            </a>
           </motion.div>
 
           {/* Stats Section */}
@@ -494,7 +449,7 @@ export default function Portfolio() {
             className="text-center mb-20"
           >
             <h2 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              THE SIGMA STORY
+              About me
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
           </motion.div>
@@ -508,23 +463,27 @@ export default function Portfolio() {
             >
               <h3 className="text-4xl font-bold text-white mb-8">
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Digital Architect
+                  Web Developer
                 </span>
                 <br />
-                Code Warrior
+                Passionate & Creative Coder
               </h3>
 
               <p className="text-xl text-gray-300 leading-relaxed">
-                I don't just write code – I architect digital experiences that
-                dominate the web. With over 5 years of relentless innovation,
-                I've built systems that handle millions of users and created
-                interfaces that convert at unprecedented rates.
+                I'm Awais, a dedicated web developer with 1 year of experience
+                in building modern, responsive, and user-friendly websites. I
+                love bringing designs to life with clean code and creative
+                flair.
               </p>
 
               <p className="text-xl text-gray-300 leading-relaxed">
-                My mission? To push the boundaries of what's possible on the
-                web. Every line of code is crafted with precision, every pixel
-                placed with purpose. I don't follow trends – I create them.
+                My core tools include{" "}
+                <span className="text-white font-semibold">
+                  Next.js, React, and Tailwind CSS
+                </span>
+                , which I use to develop fast, scalable, and visually appealing
+                web experiences. Whether it's a portfolio, landing page, or
+                dynamic app — I focus on performance, detail, and impact.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mt-12">
@@ -550,27 +509,36 @@ export default function Portfolio() {
               </div>
 
               <div className="flex flex-wrap gap-6 mt-12">
-                <div className="flex items-center gap-3 text-purple-400 text-lg">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=awaisashraf.dev@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-purple-400 text-lg hover:underline"
+                >
                   <Mail size={24} />
                   <span className="font-semibold">
                     awaisashraf.dev@gmail.com
                   </span>
-                </div>
-                <div className="flex items-center gap-3 text-purple-400 text-lg">
+                </a>
+
+                <a
+                  href="tel:+923258537217"
+                  className="flex items-center gap-3 text-purple-400 text-lg hover:underline"
+                >
                   <Phone size={24} />
                   <span className="font-semibold">+923258537217</span>
-                </div>
+                </a>
               </div>
 
               <div className="flex gap-6 mt-8">
                 <a
-                  href="#"
+                  href="https://github.com/awaisashrafdev"
                   className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center hover:bg-purple-500/30 transition-all duration-300 hover:scale-110"
                 >
                   <Github className="text-purple-400" size={28} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/muhammad-awais-6b0a5030b/"
                   className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center hover:bg-purple-500/30 transition-all duration-300 hover:scale-110"
                 >
                   <Linkedin className="text-purple-400" size={28} />
@@ -588,7 +556,7 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 opacity-30"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div className="w-full h-full bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600 flex items-center justify-center text-9xl font-bold text-white">
-                  AR
+                  <img src="/AC.jpg" alt="" />
                 </div>
 
                 {/* Floating tech icons */}
@@ -619,7 +587,7 @@ export default function Portfolio() {
             className="text-center mb-20"
           >
             <h2 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              SIGMA SKILLS
+              SKILLS
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
           </motion.div>
@@ -681,7 +649,7 @@ export default function Portfolio() {
             className="text-center mb-20"
           >
             <h2 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              SIGMA PROJECTS
+              PROJECTS
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
             <p className="text-2xl text-gray-300 max-w-4xl mx-auto">
@@ -836,7 +804,7 @@ export default function Portfolio() {
             className="text-center mb-20"
           >
             <h2 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              SIGMA JOURNEY
+              EXPERIENCE
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
           </motion.div>
@@ -905,7 +873,7 @@ export default function Portfolio() {
             className="text-center mb-20"
           >
             <h2 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              CONNECT WITH SIGMA
+              CONNECT WITH ME
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
             <p className="text-2xl text-gray-300 max-w-4xl mx-auto">
@@ -934,7 +902,11 @@ export default function Portfolio() {
               </div>
 
               <div className="space-y-8">
-                <div className="flex items-center gap-6 text-gray-300 group hover:text-purple-400 transition-colors duration-300">
+                {/* Email */}
+                <a
+                  href="mailto:awaisashraf.dev@gmail.com"
+                  className="flex items-center gap-6 text-gray-300 group hover:text-purple-400 transition-colors duration-300"
+                >
                   <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center group-hover:bg-purple-500/30 transition-colors duration-300">
                     <Mail className="text-purple-400" size={28} />
                   </div>
@@ -942,9 +914,13 @@ export default function Portfolio() {
                     <p className="font-bold text-xl">Email</p>
                     <p className="text-lg">awaisashraf.dev@gmail.com</p>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex items-center gap-6 text-gray-300 group hover:text-purple-400 transition-colors duration-300">
+                {/* Phone */}
+                <a
+                  href="tel:+923258537217"
+                  className="flex items-center gap-6 text-gray-300 group hover:text-purple-400 transition-colors duration-300"
+                >
                   <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center group-hover:bg-purple-500/30 transition-colors duration-300">
                     <Phone className="text-purple-400" size={28} />
                   </div>
@@ -952,18 +928,18 @@ export default function Portfolio() {
                     <p className="font-bold text-xl">Phone</p>
                     <p className="text-lg">+923258537217</p>
                   </div>
-                </div>
+                </a>
               </div>
 
               <div className="flex gap-6 mt-12">
                 <a
-                  href="#"
+                  href="https://github.com/awaisashrafdev"
                   className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center hover:bg-purple-500/30 transition-all duration-300 hover:scale-110"
                 >
                   <Github className="text-purple-400" size={28} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/muhammad-awais-6b0a5030b/"
                   className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center hover:bg-purple-500/30 transition-all duration-300 hover:scale-110"
                 >
                   <Linkedin className="text-purple-400" size={28} />
@@ -986,7 +962,7 @@ export default function Portfolio() {
       <footer className="relative py-12 border-t border-gray-800 z-10">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-2xl text-gray-400 font-light">
-            © 2024 Awais Rajput - Sigma Developer.
+            © 2025 Awais Rajput - Sigma Developer.
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">
               {" "}
               Crafted with 🔥 and infinite ☕

@@ -1,47 +1,63 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Send, Zap } from "lucide-react"
+import type React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Send, Zap } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const response = await fetch("https://getform.io/f/amdmvpgb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    console.log("Form submitted:", formData)
-    setIsSubmitting(false)
-    setIsSuccess(true)
-    setFormData({ name: "", email: "", message: "" })
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Submission failed! Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+    }
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSuccess(false), 3000)
-  }
+    setIsSubmitting(false);
+    setTimeout(() => setIsSuccess(false), 3000);
+  };
 
   return (
     <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-3xl border border-gray-700 hover:border-purple-500 transition-all duration-500">
       <form onSubmit={handleSubmit} className="space-y-8">
         <div>
-          <label htmlFor="name" className="block text-lg font-bold text-purple-400 mb-3">
+          <label
+            htmlFor="name"
+            className="block text-lg font-bold text-purple-400 mb-3"
+          >
             Your Name
           </label>
           <input
@@ -57,7 +73,10 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-lg font-bold text-purple-400 mb-3">
+          <label
+            htmlFor="email"
+            className="block text-lg font-bold text-purple-400 mb-3"
+          >
             Email Address
           </label>
           <input
@@ -73,7 +92,10 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-lg font-bold text-purple-400 mb-3">
+          <label
+            htmlFor="message"
+            className="block text-lg font-bold text-purple-400 mb-3"
+          >
             Project Details
           </label>
           <textarea
@@ -115,5 +137,5 @@ export default function ContactForm() {
         </motion.button>
       </form>
     </div>
-  )
+  );
 }
