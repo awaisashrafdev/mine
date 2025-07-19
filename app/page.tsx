@@ -241,12 +241,43 @@ export default function Portfolio() {
 
   if (!isClient) {
     return (
-      <div className="bg-black text-white min-h-screen flex items-center justify-center">
-        <div className="text-2xl">Loading...</div>
+      <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+        <div className="relative w-60 h-60">
+          {/* Central Glowing Planet */}
+          <div className="absolute top-1/2 left-1/2 w-10 h-10 bg-purple-600 rounded-full shadow-[0_0_60px_15px_rgba(168,85,247,0.6)] transform -translate-x-1/2 -translate-y-1/2 z-10" />
+
+          {/* Outer orbiting planets */}
+          <motion.div
+            className="absolute w-4 h-4 bg-pink-500 rounded-full shadow-lg top-0 left-1/2 transform -translate-x-1/2"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+            style={{ originX: 0.5, originY: 4.5 }}
+          />
+
+          <motion.div
+            className="absolute w-3 h-3 bg-blue-400 rounded-full shadow-md top-0 left-1/2 transform -translate-x-1/2"
+            animate={{ rotate: -360 }}
+            transition={{ repeat: Infinity, duration: 9, ease: "linear" }}
+            style={{ originX: 0.5, originY: 5.5 }}
+          />
+
+          <motion.div
+            className="absolute w-2.5 h-2.5 bg-yellow-400 rounded-full shadow top-0 left-1/2 transform -translate-x-1/2"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+            style={{ originX: 0.5, originY: 6.5 }}
+          />
+
+          {/* Shimmer shine on whole loader */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50 pointer-events-none"
+            animate={{ x: ["-100%", "100%"] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+          />
+        </div>
       </div>
     );
   }
-
   return (
     <div className="bg-black text-white overflow-x-hidden relative">
       <CustomCursor />
@@ -904,7 +935,7 @@ export default function Portfolio() {
               <div className="space-y-8">
                 {/* Email */}
                 <a
-                  href="mailto:awaisashraf.dev@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=awaisashraf.dev@gmail.com"
                   className="flex items-center gap-6 text-gray-300 group hover:text-purple-400 transition-colors duration-300"
                 >
                   <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center group-hover:bg-purple-500/30 transition-colors duration-300">
