@@ -1,44 +1,62 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [isHovering, setIsHovering] = useState(false)
-  const [isClicking, setIsClicking] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isClicking, setIsClicking] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [hasMoved, setHasMoved] = useState(false);
 
   useEffect(() => {
+    // Detect mobile screen size
+    const checkMobile = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      }
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      setHasMoved(true); // start showing cursor after first move
+    };
 
-    const handleMouseDown = () => setIsClicking(true)
-    const handleMouseUp = () => setIsClicking(false)
-    const handleMouseEnter = () => setIsHovering(true)
-    const handleMouseLeave = () => setIsHovering(false)
+    const handleMouseDown = () => setIsClicking(true);
+    const handleMouseUp = () => setIsClicking(false);
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
 
-    window.addEventListener("mousemove", updateMousePosition)
-    window.addEventListener("mousedown", handleMouseDown)
-    window.addEventListener("mouseup", handleMouseUp)
+    if (!isMobile) {
+      window.addEventListener("mousemove", updateMousePosition);
+      window.addEventListener("mousedown", handleMouseDown);
+      window.addEventListener("mouseup", handleMouseUp);
 
-    // Add hover effects to interactive elements
-    const interactiveElements = document.querySelectorAll('button, a, [role="button"], input, textarea')
-    interactiveElements.forEach((el) => {
-      el.addEventListener("mouseenter", handleMouseEnter)
-      el.addEventListener("mouseleave", handleMouseLeave)
-    })
-
-    return () => {
-      window.removeEventListener("mousemove", updateMousePosition)
-      window.removeEventListener("mousedown", handleMouseDown)
-      window.removeEventListener("mouseup", handleMouseUp)
+      const interactiveElements = document.querySelectorAll(
+        'button, a, [role="button"], input, textarea'
+      );
       interactiveElements.forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseEnter)
-        el.removeEventListener("mouseleave", handleMouseLeave)
-      })
+        el.addEventListener("mouseenter", handleMouseEnter);
+        el.addEventListener("mouseleave", handleMouseLeave);
+      });
+
+      return () => {
+        window.removeEventListener("mousemove", updateMousePosition);
+        window.removeEventListener("mousedown", handleMouseDown);
+        window.removeEventListener("mouseup", handleMouseUp);
+        interactiveElements.forEach((el) => {
+          el.removeEventListener("mouseenter", handleMouseEnter);
+          el.removeEventListener("mouseleave", handleMouseLeave);
+        });
+        window.removeEventListener("resize", checkMobile);
+      };
     }
-  }, [])
+  }, [isMobile]);
+
+  if (isMobile || !hasMoved) return null; // Hide on mobile & before movement
 
   return (
     <>
@@ -88,5 +106,5 @@ export default function CustomCursor() {
         }}
       />
     </>
-  )
+  );
 }
